@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Meal Prep Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Family Meal Prep Planner</h1>
+    <p>Healthy weekly meal plans designed for busy working parents.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1) Tell us about your family</h2>
+      <form id="family-form">
+        <label>
+          Family nickname
+          <input type="text" id="family-name" placeholder="The Chens" required />
+        </label>
+
+        <label>
+          Number of adults
+          <input type="number" id="adults" min="1" value="2" required />
+        </label>
+
+        <label>
+          Number of children
+          <input type="number" id="children" min="0" value="1" required />
+        </label>
+
+        <label>
+          Youngest child age
+          <input type="number" id="youngest-age" min="0" value="2" required />
+        </label>
+
+        <label>
+          Nutrition focus
+          <select id="focus">
+            <option value="balanced">Balanced family meals</option>
+            <option value="high-protein">High protein + low prep time</option>
+            <option value="toddler-friendly">Toddler-friendly textures</option>
+            <option value="heart-healthy">Heart-healthy</option>
+          </select>
+        </label>
+
+        <button type="submit">Generate Weekly Plan</button>
+      </form>
+    </section>
+
+    <section class="card" id="output" hidden>
+      <h2>2) Your week at a glance</h2>
+      <p id="summary"></p>
+      <div id="plan-grid" class="plan-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
