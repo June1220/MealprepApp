@@ -10,7 +10,6 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import '../global.css';
 
 SplashScreen.preventAutoHideAsync();
 

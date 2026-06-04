@@ -29,8 +29,8 @@ export default function PlannerScreen() {
 
   const { getDayCompletion, filledSlots, totalSlots } = useWeekPlan();
 
-  const pickerRef = useRef<BottomSheet>(null);
-  const optionsRef = useRef<BottomSheet>(null);
+  const pickerRef = useRef<BottomSheet | null>(null);
+  const optionsRef = useRef<BottomSheet | null>(null);
 
   const [pendingDay, setPendingDay] = useState<DayOfWeek | null>(null);
   const [pendingMealType, setPendingMealType] = useState<MealType | null>(null);

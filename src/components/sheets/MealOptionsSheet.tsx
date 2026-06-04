@@ -12,7 +12,7 @@ interface MealOption {
 }
 
 interface MealOptionsSheetProps {
-  sheetRef: React.RefObject<BottomSheet>;
+  sheetRef: React.RefObject<BottomSheet | null>;
   recipeName?: string;
   isCooked?: boolean;
   onViewRecipe: () => void;
