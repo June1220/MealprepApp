@@ -18,7 +18,7 @@ const FILTERS: { key: RecipeFilter; label: string }[] = [
 ];
 
 interface RecipePickerSheetProps {
-  sheetRef: React.RefObject<BottomSheet>;
+  sheetRef: React.RefObject<BottomSheet | null>;
   onSelect: (recipe: Recipe) => void;
   preferredMealType?: MealType;
 }
