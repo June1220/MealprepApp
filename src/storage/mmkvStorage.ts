@@ -6,9 +6,9 @@ export const mmkvStorage: StateStorage = {
     return AsyncStorage.getItem(key);
   },
   setItem: async (key, value) => {
-    AsyncStorage.setItem(key, value);
+    await AsyncStorage.setItem(key, value);
   },
   removeItem: async (key) => {
-    AsyncStorage.removeItem(key);
+    await AsyncStorage.removeItem(key);
   },
 };

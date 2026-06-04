@@ -32,7 +32,7 @@ export default function HomeScreen() {
   const { isComplete: onboardingComplete, recipesSeeded, markRecipesSeeded } = useOnboardingStore();
   const family = useFamilyStore((s) => s.family);
   const setActiveDay = useUIStore((s) => s.setActiveDay);
-  const activeWeekStartDate2 = useUIStore((s) => s.activeWeekStartDate);
+  const activeDay = useUIStore((s) => s.activeDay);
 
   const greeting = () => {
     const hour = new Date().getHours();
@@ -47,7 +47,7 @@ export default function HomeScreen() {
       seedRecipes(sampleRecipes);
       markRecipesSeeded();
     }
-  }, []);
+  }, [recipesSeeded, seedRecipes, markRecipesSeeded]);
 
   const recentRecipes = recipes.filter((r) => r.isFavorite).slice(0, 5);
   const displayRecipes = recentRecipes.length > 0 ? recentRecipes : recipes.slice(0, 5);
@@ -110,8 +110,8 @@ export default function HomeScreen() {
             <Text style={styles.completionBadge}>{completionPercentage}% planned</Text>
           </View>
           <WeekStrip
-            weekStartDate={activeWeekStartDate2}
-            activeDay={useUIStore.getState().activeDay}
+            weekStartDate={activeWeekStartDate}
+            activeDay={activeDay}
             onDayPress={(day) => {
               setActiveDay(day);
               router.push('/planner');
